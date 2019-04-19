@@ -1,0 +1,24 @@
+Issues we encountered:
+    - Reentrant ISRs
+	    - Not implicitily allowed
+	- Context switching
+	    - Failed to work with given time slot
+	- Serial.println -> doesn't work unless C++ file
+
+
+Remember: 
+	- Code to handle if there isn't a tasks in a certain priority
+	
+
+Things to consider:
+	- If we ran all x priority tasks sequentially, and there were enough, some of the tasks at the end may never run.  Additionally, lower priority tasks would also never run (if the priority ISR was non-reentrant)
+	
+	
+	
+Timing:
+	headLightTask()
+		16:17:43.162 -> Time to run task (micro seconds) with high beam 0 is: 12
+		16:17:43.229 -> Time to run task (micro seconds) with high beam 1 is: 24
+
+		
+	
